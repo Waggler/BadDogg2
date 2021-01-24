@@ -45,31 +45,33 @@ public class GameManager : MonoBehaviour
         pickUp.gameObject.SetActive(false);
         isEndOfGame = true;
 
-        if ((count <= 5) && (dead == true))
+        if ((count <= 5) && (dead == true) || (count < 5) && (dead == false) && (isEndOfGame == true))
         {
             resultText.text = "You Lose! Please Try Again!";
+            quitText.text = "Press the ESC key to Quit or R to Play Again!";
         }
         else
         {
             resultText.text = "You Win!";
+            quitText.text = "Press the ESC key to Quit or R to Play Again!";
         }
-        ChangeText();
+        //ChangeText();
     }
 
 
     public void ChangeText()
     {
-        StartCoroutine(IChangeText());
+        //StartCoroutine(IChangeText());
     }
 
 
-    IEnumerator IChangeText()
+    /*IEnumerator IChangeText()
     {
         yield return new WaitForSeconds(2f);
 
         resultText.gameObject.SetActive(false);
-        quitText.text = "Press the ESC key to Quit or R to Play Again!";
-    }
+        
+    }*/
 
 
     private void Timer()
@@ -99,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     private void PlayAudio()
     {
-        if ((count <= 5) && (isEndOfGame == true) && (dead == true))
+        if ((count <= 5) && (isEndOfGame == true) && (dead == true) || (count < 5) && (dead == false) && (isEndOfGame == true))
         {
             musicSource.gameObject.SetActive(true);
         }
