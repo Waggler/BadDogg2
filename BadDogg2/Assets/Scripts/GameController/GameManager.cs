@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            resultText.text = "You Win! Game created by Kevin H. Davis!";
+            resultText.text = "You Win!";
         }
         ChangeText();
     }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         resultText.gameObject.SetActive(false);
-        quitText.text = "Press the ESC key to Quit!";
+        quitText.text = "Press the ESC key to Quit or R to Play Again!";
     }
 
 

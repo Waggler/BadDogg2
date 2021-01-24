@@ -2,41 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Vector3 movement = new Vector3(0,0,0);
-
 public class Enemy : MonoBehaviour
 {
     Vector3 movement = new Vector3(0, 0, 0);
     public GameObject[] waypoints;
-    //public Vector3 currentPosition;
     public GameObject player;
-    //public GameObject selfRef;
     [SerializeField] private float speed;
 
+
+    //array of waypoints represent where we will go.  
+    //length of the array is how many times we will move.  Its our destination
+    // if we reach the end of the array we will reset and go back to 0 (Our first destination)
+    //once this works 
+    // if(currentPosition < 1f == true && player.isTouchingPlayer == true)
+    // kill player
+    //else keepMoving()
     void Start()
     {
         CallCorotuine();
 
     }
 
-
-    public void SetDestination()
-    {
-        for(int i = 0; i < waypoints.Length; i++)
-        {
-   
-        }
-        
-
-        //
-        //array of waypoints represent where we will go.  
-        //length of the array is how many times we will move.  Its our destination
-        // if we reach the end of the array we will reset and go back to 0 (Our first destination)
-        //once this works 
-        // if(currentPosition < 1f == true && player.isTouchingPlayer == true)
-        // kill player
-        //else keepMoving()
-    }
 
     public void CallCorotuine()
     {
