@@ -32,7 +32,7 @@ public class IntroScript: MonoBehaviour
 			introText.gameObject.SetActive(false);
 			introTextTwo.gameObject.SetActive(false);
 			introTextThree.gameObject.SetActive(false);
-			ruleText.text= "Use WASD to Move. Eat the Bones and Survive!";
+			ruleText.text= "Use WASD to Move. Eat all the Bones and Survive till the End of the Timer!";
 			StartCoroutine(WaitAndLoadFirstScene());
 		}
 	}
